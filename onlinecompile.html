@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            height: 10vh;
+            display: flex;
+            justify-content: end;
+            padding-right: 10px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        main {
+            height: 85vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 100%;
+            gap: 5px;
+
+        }
+
+        textarea {
+            border: 2px solid gray;
+            background-color: black;
+            color: white;
+            padding: 10px;
+
+        }
+
+        iframe {
+            border: 1px solid gray;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button onclick="CodeExecute()">Run</button>
+        <button onclick="ResetCode()">Reset</button>
+    </nav>
+    <main>
+
+        <textarea name="" id="code"></textarea>
+        <iframe src="" frameborder="0" id="output"></iframe>
+    </main>
+
+
+    <script>
+
+        function CodeExecute() {
+            output.srcdoc = code.value
+
+        }
+
+        function ResetCode() {
+            code.value = ''
+        }
+
+    </script>
+</body>
+
+</html>
